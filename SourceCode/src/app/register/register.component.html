@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                  <form [formGroup]="Formbook" class="contact-form simple-form"  (ngSubmit)="onFormSubmit(Formbook.value)">
+                  <h1 class="me" required><br>
+
+                    <input formControlName="fName" type="text" class="form-control form-control-user"  id="fName" placeholder="First name"><br>
+                    <input formControlName="lName" type="text" class="form-control form-control-user" id="lName" placeholder="Last name"><br>
+                    <input formControlName="uName" type="text" class="form-control form-control-user" id="uName" placeholder="Email ID" required><br>
+                    <input formControlName="pass" type="password" class="form-control form-control-user" id="pass"  placeholder="Password" required><br>
+                  </h1>
+                  <fieldset>
+
+                          <input formControlName="confirmPass" type="password" class="form-control form-control-user" id="confirmPass" placeholder="Confirm Password" required >
+                    <input formControlName="mobilePhone" type="text" class="form-control form-control-user" id="mobilePhone" placeholder="Mobile phone" optional><br>
+                    <input formControlName="class1" type="text" class="form-control form-control-user" id="class1" placeholder="Course 1" required><br>
+                    <input formControlName="class2" type="text" class="form-control form-control-user" id="class2" placeholder="Course 2" required><br>
+                    <input formControlName="class3" type="text" class="form-control form-control-user" id="class3" placeholder="COurse 3" required><br>
+                    <div id="error3" class="error-fields"></div><br>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
+                    <br>
+                  </fieldset>
+                </form>
+                <hr>
+                <div class="text-center">
+                  <a style="color:black" href="login">Login</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+      </div>
+      </div>
+    </div>
+
+</div>
+<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../assets/js/sb-admin-2.min.js"></script>
+
+

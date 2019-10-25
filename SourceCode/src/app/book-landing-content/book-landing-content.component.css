@@ -1,0 +1,44 @@
+.card-style {
+    margin: 0 100px 100px 100px;
+    width: 40rem;
+    background: #4e73df;
+    display: inline-block;
+}
+
+.card-holder {
+    width: 100%;
+}
+
+.card-text {
+    height: 55px;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-title {
+    padding: 50px;
+    color: #ffffff;
+}
+.card-text {
+    padding: 15px;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 60px;
+  margin: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 20px;}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: LightSkyBlue  ;
+}
+.xyz{
+  margin: 100px;
+}

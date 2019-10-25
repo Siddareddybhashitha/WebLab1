@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+  <div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-12 col-md-9">
+
+
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <div p-4>
+                <div class="text-center">
+                  <h1 class="h4 text-black-50 mb-4">Login page</h1>
+                </div>
+                <form [formGroup]="Formbook" (ngSubmit)="onSubmit(Formbook.value)" class="user">
+                  <div class="form-group">
+                    <input formControlName="myusername" type="email" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Email Address" required>
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="mypassword" type="password" class="form-control form-control-user" id="password" placeholder="Password" required>
+                  </div>
+                  <button type="submit" class="btn btn-outline-dark btn-user btn-block">Login</button>
+                  <hr>
+                </form>
+                <hr>
+                <div class="text-center">
+                  <a style="color: black" href="" ng-click="getPassword()">Forgot Password?</a>
+                  <a style="color: black" href="register">CREATE ACCOUNT</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>
+<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../assets/js/sb-admin-2.min.js"></script>
