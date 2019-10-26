@@ -8,29 +8,28 @@ import {ApiService} from '../api.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  book = {};
+  module = {};
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getBookDetails(this.route.snapshot.params['id']);
+    this.userDetails(this.route.snapshot.params['id']);
   }
 
-  getBookDetails(id) {
-    console.log(id);
-    this.api.getBook(id)
+  userDetails(id) {
+    this.api.getModule(id)
       .subscribe(data => {
-        console.log(data);
-        this.book = data;
+        this.module = data;
       });
   }
-  Signout()
-  {
+
+  Signout() {
     this.router.navigate(['/login']);
   }
-  Profile()
-  {
-    this.router.navigate(['/course', this.book[0].uName]);
+
+  Profile() {
+    this.router.navigate(['/course', this.module[0].userName]);
   }
 }
+

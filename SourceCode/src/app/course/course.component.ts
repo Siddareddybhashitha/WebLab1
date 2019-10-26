@@ -9,20 +9,19 @@ import {ApiService} from '../api.service';
 })
 export class CourseComponent implements OnInit {
 
-  book = {};
+  module = {};
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getBookDetails(this.route.snapshot.params['id']);
+    this.getModuleDetails(this.route.snapshot.params['id']);
   }
-  getBookDetails(id) {
-    console.log(id);
-    this.api.getBook(id)
+  getModuleDetails(id) {
+    this.api.getModule(id)
       .subscribe(data => {
-        console.log(data);
-        this.book = data;
+        this.module = data;
       });
   }
 }
+

@@ -10,25 +10,27 @@ import {ApiService} from '../api.service';
 })
 export class LoginComponent implements OnInit {
 
-  Formbook: FormGroup;
+  Formmodule: FormGroup;
   myusername: '';
   mypassword: '';
+  /* Instance generation is done here using this functionality*/
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
-    this.Formbook = this.formBuilder.group({
+    this.Formmodule = this.formBuilder.group({
       'myusername': [null, Validators.required],
       'mypassword': [null, Validators.required]
     });
   }
 
   onSubmit(form: NgForm) {
-    this.api.getBook(form['myusername'])
+    this.api.getModule(form['myusername'])
       .subscribe(data => {
-        if (data[0]['pass'] === form['mypassword']) {
+        if (data[0]['password'] === form['mypassword']) {
           this.router.navigate(['/dashboard', form['myusername']]);
         }
       });
   }
 }
+

@@ -3,27 +3,26 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../api.service';
 
 @Component({
-  selector: 'app-book-landing-content',
-  templateUrl: './book-landing-content.component.html',
-  styleUrls: ['./book-landing-content.component.css']
+  selector: 'app-module-landing-content',
+  templateUrl: './module-landing-content.component.html',
+  styleUrls: ['./module-landing-content.component.css']
 })
-export class BookLandingContentComponent implements OnInit {
-  book = {};
+export class ModuleLandingContentComponent implements OnInit {
+  module = {};
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getBookDetails(this.route.snapshot.params['id']);
+    this.getModuleDetails(this.route.snapshot.params['id']);
   }
   /* This function fetches the details of the user from the database
    */
-  getBookDetails(id) {
-    console.log(id);
-    this.api.getBook(id)
+  getModuleDetails(id) {
+    this.api.getModule(id)
       .subscribe(data => {
-        console.log(data);
-        this.book = data;
+        this.module = data;
       });
   }
 }
+

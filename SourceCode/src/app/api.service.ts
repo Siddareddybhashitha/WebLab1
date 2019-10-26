@@ -32,25 +32,25 @@ export class ApiService {
   }
 
   private extractData(res: Response) {
-    let body = res;
+    const body = res;
     return body || {};
   }
 
-  getBook(id: string): Observable<any> {
+  getModule(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  postBook(data): Observable<any> {
+  postModule(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  updateBook(id: string, data): Observable<any> {
+  updateModule(id: string, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
@@ -58,3 +58,4 @@ export class ApiService {
       );
   }
 }
+

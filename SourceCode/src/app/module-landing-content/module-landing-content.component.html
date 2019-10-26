@@ -5,11 +5,23 @@
         <h3>Courses Enrolled</h3>
         <p>No of classes</p>
         <p>credits:</p>
-        <h5 class="card-title">{{book[0].class1}}</h5>
+        <h5 class="card-title">{{module[0].course1}}</h5>
         <mat-card-actions>
-          <a mat-raised-button color="primary" [routerLink]="['/course-edit', book[0].uName]"><mat-icon>edit</mat-icon></a>
+          <a mat-raised-button color="primary" [routerLink]="['/course-edit', module[0].userName]"><mat-icon>edit</mat-icon></a>
         </mat-card-actions>
 
+      </div>
+    </div>
+<!-- We are using the cards concept here for this display -->
+    <div class="column">
+      <div class="card">
+        <h3>Courses Enrolled</h3>
+        <p>No of classes</p>
+        <p>credits:</p>
+        <h5 class="card-title">{{module[0].course2}}</h5>
+        <mat-card-actions>
+          <a mat-raised-button color="primary" [routerLink]="['/course-edit', module[0].userName]"><mat-icon>edit</mat-icon></a>
+        </mat-card-actions>
       </div>
     </div>
 
@@ -18,25 +30,13 @@
         <h3>Courses Enrolled</h3>
         <p>No of classes</p>
         <p>credits:</p>
-        <h5 class="card-title">{{book[0].class2}}</h5>
+        <h5 class="card-title">{{module[0].course3}}</h5>
         <mat-card-actions>
-          <a mat-raised-button color="primary" [routerLink]="['/course-edit', book[0].uName]"><mat-icon>edit</mat-icon></a>
+          <a mat-raised-button color="primary" [routerLink]="['/course-edit', module[0].userName]"><mat-icon>edit</mat-icon></a>
         </mat-card-actions>
       </div>
     </div>
-
-    <div class="column">
-      <div class="card">
-        <h3>Courses Enrolled</h3>
-        <p>No of classes</p>
-        <p>credits:</p>
-        <h5 class="card-title">{{book[0].class3}}</h5>
-        <mat-card-actions>
-          <a mat-raised-button color="primary" [routerLink]="['/course-edit', book[0].uName]"><mat-icon>edit</mat-icon></a>
-        </mat-card-actions>
-      </div>
-    </div>
-
+<!--This is for displaying the courses enrolled-->
 
   </div>
 </div>

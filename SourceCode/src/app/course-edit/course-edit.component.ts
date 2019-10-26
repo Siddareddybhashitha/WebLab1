@@ -10,50 +10,48 @@ import {ApiService} from '../api.service';
 })
 export class CourseEditComponent implements OnInit {
 
-  bookForm: FormGroup;
+  Formmodule: FormGroup;
 
 
-  fName: string = '';
-  lName: string = '';
-  uName: string = '';
-  mobilePhone: string = '';
-  class1: string = '';
-  class2: string = '';
-  class3: string = '';
+  firstName:  '';
+  lastName:  '';
+  userName: '';
+  mobilenumber: '';
+  course1: '';
+  course2: '';
+  course3: '';
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
 
-    this.bookForm = this.formBuilder.group({
-      'fName': '',
-      'lName': '',
-      'uName': '',
-      'mobilePhone': '',
-      'class1': '',
-      'class2': '',
-      'class3': '',
+    this.Formmodule = this.formBuilder.group({
+      'firstName': '',
+      'lastName': '',
+      'userName': '',
+      'mobilenumber': '',
+      'course1': '',
+      'course2': '',
+      'course3': '',
     });
-    /* This function gets the students details from database
- */
-    this.api.getBook(this.route.snapshot.params['id'])
+    this.api.getModule(this.route.snapshot.params['id'])
       .subscribe(data => {
-        this.bookForm = this.formBuilder.group({
-          'fName': data[0].fName,
-          'lName': data[0].lName,
-          'uName': data[0].uName,
-          'mobilePhone': data[0].mobilePhone,
-          'class1': data[0].class1,
-          'class2': data[0].class2,
-          'class3': data[0].class3,
+        this.Formmodule = this.formBuilder.group({
+          'firstName': data[0].firstName,
+          'lastName': data[0].lastName,
+          'userName': data[0].userName,
+          'mobilenumber': data[0].mobilenumber,
+          'course1': data[0].course1,
+          'course2': data[0].course2,
+          'course3': data[0].course3,
         });
       });
   }
   onFormSubmit(form: NgForm) {
-    this.api.updateBook(this.route.snapshot.params['id'], form)
+    this.api.updateModule(this.route.snapshot.params['id'], form)
       .subscribe(res => {
-        let id = res['_id'];
+        const id = res['_id'];
         this.router.navigate(['/course', id]);
       }, (err) => {
         console.log(err);
@@ -61,3 +59,4 @@ export class CourseEditComponent implements OnInit {
     this.router.navigate(['/dashboard']);
   }
 }
+

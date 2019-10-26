@@ -15,7 +15,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
-import { BookLandingContentComponent } from './book-landing-content/book-landing-content.component';
+import { ModuleLandingContentComponent } from './module-landing-content/module-landing-content.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -61,7 +61,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookLandingContentComponent,
+    ModuleLandingContentComponent,
     RegisterComponent,
     LoginComponent,
     DashboardComponent,

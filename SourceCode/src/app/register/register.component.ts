@@ -8,38 +8,36 @@ import {ApiService} from '../api.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {Formbook: FormGroup;
-  fName: '';
-  lName: '';
-  uName: '';
-  pass: '';
-  confirmPass: '';
-  mobilePhone: '';
-  security: '';
-  answer: '';
-  class1: '';
-  class2: '';
-  class3: '';
+export class RegisterComponent implements OnInit {Formmodule: FormGroup;
+  firstName: '';
+  lastName: '';
+  userName: '';
+  password: '';
+  passwordconfirmation: '';
+  mobilenumber: '';
+  course1: '';
+  course2: '';
+  course3: '';
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
-    this.Formbook = this.formBuilder.group({
-      'fName': [null, Validators.required],
-      'lName': [null, Validators.required],
-      'uName': [null, Validators.required],
-      'pass': [null, Validators.required],
-      'confirmPass': [null, Validators.required],
-      'mobilePhone': [null, Validators.required],
-      'class1': [null, Validators.required],
-      'class2': [null, Validators.required],
-      'class3': [null, Validators.required],
+    this.Formmodule = this.formBuilder.group({
+      'firstName': [null, Validators.required],
+      'lastName': [null, Validators.required],
+      'userName': [null, Validators.required],
+      'password': [null, Validators.required],
+      'passwordconfirmation': [null, Validators.required],
+      'mobilenumber': [null, Validators.required],
+      'course1': [null, Validators.required],
+      'course2': [null, Validators.required],
+      'course3': [null, Validators.required],
     });
   }
 
   onFormSubmit(form: NgForm) {
     console.log(form);
-    this.api.postBook(form)
+    this.api.postModule(form)
       .subscribe(res => {
         this.router.navigate(['/login']);
       }, (err) => {
@@ -47,3 +45,4 @@ export class RegisterComponent implements OnInit {Formbook: FormGroup;
       });
   }
 }
+

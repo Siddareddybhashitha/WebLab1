@@ -1,36 +1,36 @@
 <div class="col-md-4 col-md-offset-4" >
   <div class="box-content profile">
-    <form [formGroup]="bookForm" class="contact-form simple-form" (ngSubmit)="onFormSubmit(bookForm.value)">
+    <!--THIS IS FOR EDITING THE COURSE COMPONENT PLEASE FIND THE BELOW CODE. -->
+    <form [formGroup]="Formmodule" class="contact-form simple-form" (ngSubmit)="onFormSubmit(Formmodule.value)">
       <fieldset>
-        <input formControlName="fName" type="text" style="width: 80%;"  id="fName" value={{book.fName}} required>
+        <input formControlName="firstName" type="text" style="width: 80%;"  id="firstName" value={{module.firstName}} required>
         <br>
         <br>
-        <input formControlName="lName" type="text" style="width: 80%;" id="lName" value={{book.lName}}>
+        <input formControlName="lastName" type="text" style="width: 80%;" id="lastName" value={{module.lastName}}>
         <br>
         <br>
-        <input formControlName="uName" type="text" style="width: 80%;" id="uName" value={{book.uName}} required>
+        <input formControlName="userName" type="text" style="width: 80%;" id="userName" value={{module.userName}} required>
         <br>
         <br>
-        <input formControlName="class1" type="text" style="width: 80%;" id="class1" value={{book.class1}} required>
+        <input formControlName="course1" type="text" style="width: 80%;" id="course1" value={{module.course1}} required>
         <br>
         <br>
-        <input formControlName="class2" type="text" style="width: 80%;" id="class2" value={{book.class2}} required>
+        <input formControlName="course2" type="text" style="width: 80%;" id="course2" value={{module.course2}} required>
         <br>
         <br>
-        <input formControlName="class3" type="text" style="width: 80%;" id="class3" value={{book.class3}} required>
+        <input formControlName="course3" type="text" style="width: 80%;" id="course3" value={{module.course3}} required>
         <br>
         <br>
-        <input formControlName="mobilePhone" type="text" style="width: 80%;" id="mobilePhone" value={{book.mobilePhone}} optional>
+        <input formControlName="mobilenumber" type="text" style="width: 80%;" id="mobilenumber" value={{module.mobilenumber}} optional>
         <br>
         <br>
       </fieldset>
       <div class="button-row">
-        <button type="submit" [disabled]="!bookForm.valid" mat-raised-button color="primary">
+        <button type="submit" [disabled]="!Formmodule.valid" mat-raised-button color="primary">
           <mat-icon>save</mat-icon>
         </button>
       </div>
     </form>
-    <!--<input type="text"  style="width: 100% ;border: 0px; background-color: #F5F5F5; color: red" ng-model="finalErr">-->
   </div>
 </div>
 
